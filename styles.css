@@ -27,7 +27,7 @@ body {
 .fh {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: space-around;
 }
 
 .fv {
@@ -51,7 +51,6 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-
    .main-info,
    .contact_info_container {
       flex-direction: column;
@@ -92,7 +91,6 @@ body {
 .contact-info__block {
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
 }
 
 .contact-info__block--center {
@@ -104,6 +102,7 @@ body {
    text-decoration: none;
    display: flex;
    justify-content: start;
+   align-items: center;
 }
 
 .contact-info__item:not(:last-child) {
@@ -126,10 +125,18 @@ body {
    vertical-align: text-bottom;
 }
 
+a {
+   transition: transform 0.3s ease;
+}
+
+a:hover {
+   transform: scale(1.1);
+}
+
 .contact-info__avatar {
-   border-radius: 50%;
-   width: 100px;
-   height: 100px;
+   border-radius: 10%;
+   width: 120px;
+   height: 120px;
    object-fit: cover;
    border: 3px solid;
    border-color: var(--text-decoration-color);
@@ -177,14 +184,14 @@ body {
 /* Experience and additional info styles */
 
 .experiences {
-   flex: 1 1 60%;
-   margin-right: 50px;
+   flex: 1 1 10%;
+   margin-right: 30px;
 }
 
 .experiences__header {
    color: var(--secondary-text-color);
    text-align: left;
-   margin-bottom: 20px;
+   margin-bottom: 5px;
 }
 
 .experiences__company-header-durability {
@@ -197,13 +204,12 @@ body {
 .experiences__company-header-name {
    color: var(--primary-text-color);
    text-decoration-color: var(--text-decoration-color);
-   text-decoration-line: underline;
    text-align: left;
    margin-bottom: 20px;
+   border-bottom: 3px solid var(--border-color);
 }
 
 .experiences__company-project {
-   margin-left: 15px;
    margin-bottom: 25px;
 }
 
@@ -236,8 +242,17 @@ body {
 .additional-info__education-header {
    color: var(--secondary-text-color);
    text-align: left;
-   margin-bottom: 20px;
+   margin-bottom: 5px;
 }
+
+.additional-info__education-university {
+   margin-bottom: 5px;
+   border-bottom: 3px solid var(--border-color);
+}
+
+.additional-info__education-university:last-of-type {
+   border-bottom: none;
+ }
 
 .additional-info__education-university-durability {
    color: var(--durability-text-color);
@@ -249,11 +264,12 @@ body {
 .additional-info__education-university-speciality {
    color: var(--primary-text-color);
    text-align: left;
-   margin-bottom: 10px;
+   line-height: 1.2;
 }
 
 .additional-info__education-university-name {
    color: var(--secondary-text-color);
+   margin-bottom: 5px;
 }
 
 .additional-info__languages {
